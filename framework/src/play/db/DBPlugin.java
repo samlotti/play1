@@ -184,7 +184,8 @@ public class DBPlugin extends PlayPlugin {
                 String host = m.group("host");
                 String parameters = m.group("parameters");
                 
-                dbConfig.put("db.driver", "com.mysql.jdbc.Driver");
+                dbConfig.put("db.driver", "com.mysql.cj.jdbc.Driver");
+
                 dbConfig.put("db.url", "jdbc:mysql://" + (host == null ? "localhost" : host) + "/" + name + "?" + parameters);
                 if (user != null) {
                     dbConfig.put("db.user", user);
